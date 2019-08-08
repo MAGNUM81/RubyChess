@@ -11,7 +11,7 @@ class Position
   end
 
   def relative_vector(position)
-    Position.new((x - position.x).abs, (y - position.y).abs)
+    Position.new((x - position.x), (y - position.y))
   end
 
   def aligned_x(position)
