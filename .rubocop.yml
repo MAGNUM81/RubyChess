@@ -1,0 +1,6 @@
+Layout/EndOfLine:
+  EnforcedStyle: lf
+Metrics/LineLength:
+  Max: 150
+Style/NumericLiterals:
+  Enabled: false
