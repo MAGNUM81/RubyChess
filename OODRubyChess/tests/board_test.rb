@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require './OODRubyChess/tests/test_helper'
+require './helpers/test_helper'
 require './OODRubyChess/src/board'
 
 # this shiny device will run unit tests against our chess constraints system
@@ -68,7 +68,7 @@ class BoardUnitTests < MiniTest::Test
     ex = Board::OccupiedError.new
     assert_equal('There is already a piece there.', ex.message)
     ex = Board::EmptyError.new
-    assert_equal('There is no piece to remove here.', ex.message)
+    assert_equal('There is no piece here.', ex.message)
   end
 
   def test_serialize

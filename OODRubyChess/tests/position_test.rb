@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require './OODRubyChess/tests/test_helper'
+require './helpers/test_helper'
 require './OODRubyChess/src/position'
 
 # this shiny device unit tests the Position class
