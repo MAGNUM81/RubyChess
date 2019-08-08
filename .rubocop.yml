@@ -4,3 +4,5 @@ Metrics/LineLength:
   Max: 150
 Style/NumericLiterals:
   Enabled: false
+Metrics/AbcSize:
+  Max: 25
