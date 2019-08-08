@@ -14,15 +14,19 @@ class Position
     new(0, 0)
   end
 
+  def self.random
+    new(rand(0..7), rand(0..7))
+  end
+
   def relative_vector(position)
     Position.new((x - position.x), (y - position.y))
   end
 
-  def aligned_x(position)
+  def aligned_y(position)
     x == position.x
   end
 
-  def aligned_y(position)
+  def aligned_x(position)
     y == position.y
   end
 

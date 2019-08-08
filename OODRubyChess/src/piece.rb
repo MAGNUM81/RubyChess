@@ -23,7 +23,7 @@ class Piece
       CBISHOP = { pattern: 'x', max_x: 7, max_y: 7 }.freeze
       CKNIGHT = { pattern: 'l', max_x: 2, max_y: 2 }.freeze
       CPAWN = { pattern: 'i', max_x: 1, max_y: 2 }.freeze
-      MAP = { King: CKING, Queen: CQUEEN, Rook: CROOK, Bishop: CBISHOP, Knight: CKNIGHT, Pawn: CPAWN }.freeze
+      MAP = { KING => CKING, QUEEN => CQUEEN, ROOK => CROOK, BISHOP => CBISHOP, KNIGHT => CKNIGHT, PAWN => CPAWN }.freeze
     end
   end
   # contains the color constants for the pieces
