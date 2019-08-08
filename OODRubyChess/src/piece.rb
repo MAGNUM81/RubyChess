@@ -51,5 +51,4 @@ class Piece
   def !=(other)
     uuid != other.uuid
   end
-
 end
