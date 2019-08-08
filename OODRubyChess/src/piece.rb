@@ -16,6 +16,7 @@ class Piece
     TYPES = [KING, QUEEN, PAWN, ROOK, BISHOP, KNIGHT].freeze
 
     class Constraints
+      class BadPatternError < StandardError; end
       CKING = { pattern: '+x', max_x: 1, max_y: 1 }.freeze
       CQUEEN = { pattern: '+x', max_x: 7, max_y: 7 }.freeze
       CROOK = { pattern: '+', max_x: 7, max_y: 7 }.freeze

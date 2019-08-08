@@ -10,6 +10,10 @@ class Position
     self.y = y_axis
   end
 
+  def self.zero
+    new(0, 0)
+  end
+
   def relative_vector(position)
     Position.new((x - position.x), (y - position.y))
   end
@@ -41,4 +45,10 @@ class Position
   def -(other)
     Position.new(x - other.x, y - other.y)
   end
+
+  def abs
+    Position.new(x.abs, y.abs)
+  end
+
+
 end
