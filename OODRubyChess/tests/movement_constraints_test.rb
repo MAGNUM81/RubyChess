@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-require './OODRubyChess/tests/test-helper'
+require './OODRubyChess/tests/test_helper'
 
 # this shiny device will run unit tests against our chess constraints system
-class MovementConstraintsTests < MiniTest::Unit::TestCase
+class MovementConstraintsTests < MiniTest::Test
   def setup
     # Do nothing
   end
