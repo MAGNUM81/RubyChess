@@ -24,7 +24,7 @@ class Board
   # describes a piece placing error
   class OccupiedError < BoardError
     def message
-      'There is already a piece here.'
+      'There is already a piece there.'
     end
   end
 

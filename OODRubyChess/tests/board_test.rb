@@ -11,15 +11,7 @@ class BoardUnitTests < MiniTest::Test
     @other_random_valid_position = Position.new(rand(0..7), rand(0..7))
     @random_invalid_x_position = Position.new(rand(8..16), rand(7))
     @random_invalid_y_position = Position.new(rand(7), rand(8..16))
-
-    @fixed_position35 = Position.new(3, 5)
-    @fixed_position76 = Position.new(7, 6)
-
     @some_piece = Piece.new(Piece::Type::KING, Piece::Color::WHITE)
-  end
-
-  def teardown
-    # Do nothing
   end
 
   def test_validate_position
@@ -68,6 +60,15 @@ class BoardUnitTests < MiniTest::Test
     @board.place(@some_piece, @random_valid_position)
     @board.remove(@random_valid_position)
     assert_nil(@board.get_piece_from_position(@random_valid_position))
+  end
+
+  def test_messages_board_errors
+    ex = Board::OutOfBoundsError.new
+    assert_equal('The requested position is out of bounds.', ex.message)
+    ex = Board::OccupiedError.new
+    assert_equal('There is already a piece there.', ex.message)
+    ex = Board::EmptyError.new
+    assert_equal('There is no piece to remove here.', ex.message)
   end
 
   def test_serialize
