@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require './OODRubyChess/tests/test_helper'
+require './helpers/test_helper'
 require './OODRubyChess/src/position'
 
 # this shiny device unit tests the Position class
@@ -37,14 +37,14 @@ class PositionUnitTests < Minitest::Test
 
   def test_aligned_and_superposed
     pos1 = Position.new(0, 24)
-    pos2 = Position.new(0, 45)
+    pos2 = Position.new(45, 24)
     assert_equal(true, pos1.aligned_x(pos2))
     assert_equal(false, pos1.aligned_y(pos2))
     assert_equal(false, pos1.superposed(pos2))
-    pos2.x = 10
-    pos2.y = 24
-    assert_equal(true, pos1.aligned_y(pos2))
     pos2.x = 0
+    pos2.y = 32
+    assert_equal(true, pos1.aligned_y(pos2))
+    pos2.y = 24
     assert_equal(true, pos1.superposed(pos2))
   end
 

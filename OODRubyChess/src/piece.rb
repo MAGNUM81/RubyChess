@@ -9,11 +9,22 @@ class Piece
     class BadTypeError < StandardError; end
     KING = 'King'
     QUEEN = 'Queen'
-    TOWER = 'Rook'
+    ROOK = 'Rook'
     BISHOP = 'Bishop'
     KNIGHT = 'Knight'
     PAWN = 'Pawn'
-    TYPES = [KING, QUEEN, PAWN, TOWER, BISHOP, KNIGHT].freeze
+    TYPES = [KING, QUEEN, PAWN, ROOK, BISHOP, KNIGHT].freeze
+
+    class Constraints
+      class BadPatternError < StandardError; end
+      CKING = { pattern: '+x', max_x: 1, max_y: 1 }.freeze
+      CQUEEN = { pattern: '+x', max_x: 7, max_y: 7 }.freeze
+      CROOK = { pattern: '+', max_x: 7, max_y: 7 }.freeze
+      CBISHOP = { pattern: 'x', max_x: 7, max_y: 7 }.freeze
+      CKNIGHT = { pattern: 'l', max_x: 2, max_y: 2 }.freeze
+      CPAWN = { pattern: 'i', max_x: 1, max_y: 2 }.freeze
+      MAP = { KING => CKING, QUEEN => CQUEEN, ROOK => CROOK, BISHOP => CBISHOP, KNIGHT => CKNIGHT, PAWN => CPAWN }.freeze
+    end
   end
   # contains the color constants for the pieces
   class Color

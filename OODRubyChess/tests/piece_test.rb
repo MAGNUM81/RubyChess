@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require './OODRubyChess/tests/test_helper'
+require './helpers/test_helper'
 
 # this shiny device executes unit tests on the Piece class
 class PieceUnitTests < MiniTest::Test

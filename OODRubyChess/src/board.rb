@@ -31,7 +31,7 @@ class Board
   # describes a piece removing error
   class EmptyError < BoardError
     def message
-      'There is no piece to remove here.'
+      'There is no piece here.'
     end
   end
 
