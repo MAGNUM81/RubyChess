@@ -19,7 +19,7 @@ class PatternValidator
   end
 
   def self.validate_pattern(pattern, from_pos, to_pos, max_x, max_y)
-    valid = true
+    valid = false
     pattern.each_char do |c|
       case c
       when '+' then valid = validate_vertical_cross(from_pos, to_pos)
@@ -28,7 +28,7 @@ class PatternValidator
       when 'i' then valid = validate_pawn_pattern(from_pos, to_pos)
       else raise Piece::Constraints::BadPatternError
       end
-      return false unless valid
+      break if valid
     end
     valid
   end
