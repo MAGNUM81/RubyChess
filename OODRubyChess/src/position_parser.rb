@@ -2,7 +2,7 @@
 
 # this shiny device will parse human chess positions to computer chess positions
 class PositionParser
-  def parse(str_position)
+  def self.parse(str_position)
     pos = Position.new(-1, -1)
     str_position.each_char do |c|
       pos.x = c.ord - 65 if (65..72).include? c.ord

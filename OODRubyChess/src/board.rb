@@ -44,6 +44,10 @@ class Board
     @occupied_space = Array.new(upper_bound_x + 1) { Array.new(upper_bound_y + 1, piece: nil) }
   end
 
+  def self.default
+    new(BASIC_BOUNDS)
+  end
+
   def validate_positions(*positions)
     ret = true
     positions.each do |pos|

@@ -32,6 +32,10 @@ class Piece
     WHITE = 'White'
     BLACK = 'Black'
     COLORS = [WHITE, BLACK].freeze
+    def self.next(actual)
+      BLACK if actual == WHITE
+      WHITE
+    end
   end
 
   attr_accessor :type
